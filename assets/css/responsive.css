@@ -1,0 +1,24 @@
+.container{
+    display: none;
+}
+/* >= 1024px */
+@media screen and (min-width: 1024px){ /*pc>= 1024px*/
+    .container{
+        color: red;
+        display: block;
+    } 
+}
+/* <1024px and > 740px */
+@media (max-width: 1024px) and (min-width: 740px){ /*740px<=tablet<1023px*/
+     .container{
+        color: red;
+        display: block;
+    } 
+}
+/* <=740px */
+@media (max-width: 740px){
+    .container{
+        color: red;
+        display: block;
+    } 
+}

@@ -1,0 +1,265 @@
+/* css modal book-now */
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(121, 93, 93, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none; /*ẩn modal đi*/
+}
+.modal.open{                /*thêm open cho phần js*/
+    display: flex;      
+}
+.modal-container{
+    background-color: #fff;
+    width: 900px;
+    max-width: calc(100% - 32px);
+    min-height: 400px;
+    position: relative; /*giữ cố định*/
+    animation: modalFadein ease 0.7s;/* chuyển dộng nhanh chậm --> mục này làm css phần keyfram dưới xong lên đây lên animation này*/
+}
+      .modal-close{
+          position: absolute;/*làm nền icon mất và nút icon sẽ hợp lề */
+          right: 0;
+          top: 0;
+          color: #fff;
+          font-size: 30px;
+          padding: 12px;
+          cursor: pointer;
+          opacity: 0.8;
+
+      }
+.modal-header{
+    height: 130px;
+    background-color: #009688;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 30px;
+}
+.modal-header-icon{
+    margin-right: 16px;
+}
+.modal-body{
+    padding: 16px;
+    margin-left: 60px;
+}
+.modal-label{
+    display: block; /*2 thanh shopping và user nằm riêng biệt 1 dòng*/
+    font-size: 15px;
+    margin-top: 15px;
+}
+.modal-body input{
+    width: 100%;
+    max-width: calc(100% - 32px); /* thu modal-input lại 100% - 32px lề kiểu padding 2 bên trái phải*/
+    font-size: 20px;
+    padding: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+}
+.modal-body ::placeholder{
+    font-style: italic;
+    font-size: 16px;
+   
+}
+.modal-label{
+    margin-bottom: 12px;
+}
+.modal-icon-user, .modal-icon-shopping{
+    margin-right: 12px;
+}
+.modal-pay {
+   background-color: #009688;
+   height: 30px;
+   border: none;
+   width: 100%;     
+   max-width: calc(100% - 32px); /* thu modal-pay lại 100% - 32px lề kiểu padding 2 bên trái phải*/
+   height: 50px;
+   font-size: 20px;
+   padding: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+#buy-tickets:hover{
+    opacity: 0.8;
+}
+
+.modal-pay span{
+    padding: 10px;
+    color:rgb(255, 255, 255);
+}
+.modal-help{
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
+.modal-footer p{
+    font-size: 16px;
+    margin-right: 70px;
+    text-align: right;
+}
+.modal-help a{
+    color:rgb(81, 139, 247);
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+/*click btn hiện modal lên và trôi xuống dùng keyframes js*/
+@keyframes modalFadein {
+    from{
+        transform: translateY(-150px);
+    }    
+    to{
+        transform: translateY(0);
+    }
+}
+
+/* css modal sidebar*/
+.modalSidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(121, 93, 93, 0);
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    display: none; /*ẩn modal đi */
+}
+.modalSidebar-container{
+    width: 340px;
+    height: 100%;
+    overflow: scroll;
+    background: #fff;
+    position: relative;
+    animation: modalSidefadein ease 0.5s;
+}
+.modalSidebar-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 7px;
+    font-size: 30px;
+    color: rgba(88, 66, 66, 0.651);
+    cursor: pointer;
+    opacity: 0.8;
+}
+.modalSidebar-header{
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 40px;
+}
+.modalSidebar-header h4{
+    color: #9a9a9a;
+    margin-bottom: 10px;
+}
+.modalSidebar-header h2{
+    font-size: 25px;
+    color: #160707;
+    font-weight: bold;
+}
+.modalSidebar-header span{
+    color: #555;
+    font-size: 20px;
+    font-weight: bold;
+} 
+/* gạch sau chữ*/
+.underline {
+    position: relative;
+    z-index: 0;
+}
+.underline::after {
+    content: "";
+    position: absolute;
+    bottom: 14%;
+    left: 0;
+    right: 0;
+    height: 5px;
+    z-index: -1;
+}
+.underline.yellow::after{
+    background-color: yellow;
+}
+
+.modalSidebar-location{
+    margin-left: 30px;
+}
+.modal-flex{
+    display: flex; /*cho berlin, location sang 1 bên từng item*/
+    margin-bottom: 15px; 
+}
+.modalSidebar-body .modal-row{
+    display: inline-block;
+    position: relative;
+}
+.modal-row{
+    position: absolute;
+    top: 0%;
+    left: 5%;
+    margin-top: 30px;
+    /* margin-bottom: 25px; */
+    text-align: center;
+}
+.modal-row h3{
+    /* margin-bottom: 7px; */
+    color: #555;
+}
+.modal-row a{
+    text-decoration: none;
+}
+.modal-row p{
+     color: #555;
+}
+/* add open - remove open js*/
+.modalSidebar.open{
+    display: flex;
+}
+.modalSidebar-btn{
+    margin-top: 15px;
+}
+.modalSidebar-btn button{
+    width: 120px;
+    height: 25px;
+    border-radius: 10px;
+    /* outline: none; */
+    border: none;
+   
+    cursor: pointer;
+    /* background: linear-gradient(#ffd205 ,#ff9b05); */
+}
+
+.modalSidebar-btn button a{
+    color: #fff;
+}
+.modalSidebar-btn button:hover{
+    opacity: 0.8;
+    cursor: pointer;
+} 
+.col-1 button{
+    background: linear-gradient(to right, #ffd205 0%, #ff9b05 100%);
+}
+.col-2 button{
+    background: linear-gradient(to right, #f76570 0%, #f78d65 100%);
+}
+.col-3 button{
+    background: linear-gradient(to right, #ba71da 0%, #da717b 100%);
+}
+
+@keyframes modalSidefadein{
+    from{
+        transform: translateX(150px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}
+
