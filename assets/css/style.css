@@ -7,14 +7,14 @@
     font-family: 'Open Sans', sans-serif;
     /* background-image: url(http://www.nicdarkthemes.com/themes/travel/wp/demo/love-travel/wp-content/uploads/sites/3/2018/11/parallax-2.jpg); */
     background-image: url(../img/parallax-2.jpg);
-    /* background-size: contain; */
+    background-size: cover;
     background-attachment: fixed;
     /* margin-top: calc(0px - var(--header-height-width)); */
     filter: brightness(100%);/*độ sáng ảnh*/
     height: 873px;
     /* z-index: 99; */
     width: 100%;
-    
+    position: relative;
     /* height: 236px;
     background-image: url(../img/banner.jpg);
     background-position: center; /*lấy trung tâm ảnh*/
